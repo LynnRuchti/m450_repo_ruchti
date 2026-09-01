@@ -39,7 +39,8 @@ public class Main {
         }
     }
 }
-```<br><br>
+```
+<br><br>
 
 **Testtreiber**<br>
 ```java
@@ -58,7 +59,8 @@ public class Testtreiber {
         return true;
     }
 }
-```<br><br>
+```
+<br><br>
 
 **PriceCalculator**<br>
 ```java
@@ -82,7 +84,8 @@ public class PriceCalculator {
         return Math.ceil(result * 100.0) / 100.0;   //rundet Endbetrag auf zwei Kommastellen auf/ab
     }
 }
-```<br><br>
+```
+<br><br>
 
 Logikfehler:<br>
 - Im Orginal wäre es nicht möglich gewesen den Rabat für 5 oder mehr Zusätze zu erhalten da es ein else if war. **=>** Also habe ich die Reihenfolge geändert und nun wirds vom Grösten zum Kleinsten geprüft.
