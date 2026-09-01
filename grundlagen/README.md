@@ -28,7 +28,7 @@ In einer App gibt es eine Suchleiste, die gewünschten Ergebnisse werden zwar an
 
 ## Aufgabe 3
 **Main**<br>
-´´´java
+```java
 public class Main {
     public static void main(String[] args) {
         Testtreiber testtreiber = new Testtreiber();
@@ -39,10 +39,10 @@ public class Main {
         }
     }
 }
-´´´<br><br>
+```<br><br>
 
 **Testtreiber**<br>
-´´´java
+```java
 public class Testtreiber {
 
     boolean test_calculate_price(){
@@ -58,10 +58,10 @@ public class Testtreiber {
         return true;
     }
 }
-´´´<br><br>
+```<br><br>
 
 **PriceCalculator**<br>
-´´´java
+```java
 public class PriceCalculator {
 
     double calculatePrice(double baseprice, double specialprice, double extraprice, int extras, double discount) {
@@ -82,7 +82,7 @@ public class PriceCalculator {
         return Math.ceil(result * 100.0) / 100.0;   //rundet Endbetrag auf zwei Kommastellen auf/ab
     }
 }
-´´´<br><br>
+```<br><br>
 
 Logikfehler:<br>
 - Im Orginal wäre es nicht möglich gewesen den Rabat für 5 oder mehr Zusätze zu erhalten da es ein else if war. **=>** Also habe ich die Reihenfolge geändert und nun wirds vom Grösten zum Kleinsten geprüft.
