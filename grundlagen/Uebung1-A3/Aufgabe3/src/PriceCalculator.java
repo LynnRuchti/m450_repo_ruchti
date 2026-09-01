@@ -15,6 +15,6 @@ public class PriceCalculator {
         result = baseprice/100.0 * (100-discount) + specialprice
                 + extraprice/100.0 * (100-extra_discount);
 
-        return Math.ceil(result * 100.0) / 100.0;
+        return Math.ceil(result * 100.0) / 100.0;   //rundet Endbetrag auf zwei Kommastellen auf/ab
     }
 }
