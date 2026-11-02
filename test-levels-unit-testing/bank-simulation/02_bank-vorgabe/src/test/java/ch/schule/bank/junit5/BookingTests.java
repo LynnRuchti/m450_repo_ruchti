@@ -3,33 +3,48 @@ package ch.schule.bank.junit5;
 import ch.schule.Booking;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.fail;
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 /**
  * Tests für die Klasse Booking.
  *
- * @author Luigi Cavuoti
- * @version 1.1
+ * @author elifbcan
+ * @version 2.0
  */
 public class BookingTests
 {
-	/**
-	 * Tests f�r die Erzeugung von Buchungen.
-	 */
-	@Test
-	public void testInitialization()
-	{
-		fail("toDo");
-	}
+    /**
+     * Tests für die Erzeugung von Buchungen.
+     */
+    @Test
+    public void testInitialization()
+    {
+        Booking booking = new Booking(1, 1000);
 
-	/**
-	 * Experimente mit print().
-	 */
-	@Test
-	public void testPrint()
-	{
-		fail("toDo");
-	}
+        assertEquals(1, booking.getDate());
+
+        assertEquals(1000, booking.getAmount());
+    }
+
+    /**
+     * Experimente mit print().
+     */
+    @Test
+    public void testPrint()
+    {
+        PrintStream old = System.out;
+        ByteArrayOutputStream out = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(out));
+        try {
+            new Booking(0, 100000).print(0);
+        } finally {
+            System.setOut(old);
+        }
+
+        assertTrue(out.toString().contains("01.01.1970"));
+    }
 }
