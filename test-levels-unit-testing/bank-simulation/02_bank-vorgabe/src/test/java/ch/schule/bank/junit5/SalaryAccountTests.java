@@ -5,17 +5,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-/**
- * Tests der Klasse SalaryAccount.
- *
- * @author elifbcan
- * @version 2.0
- */
-public class SalaryAccountTests
-{
-    /**
-     * Der Test.
-     */
+public class SalaryAccountTests {
     @Test
     public void test()
     {

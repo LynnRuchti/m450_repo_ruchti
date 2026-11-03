@@ -7,17 +7,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-/**
- * Tests für das Promo-Jugend-Sparkonto.
- *
- * @author elifbcan
- * @version 2.0
- */
-public class PromoYouthSavingsAccountTests
-{
-    /**
-     * Der Test.
-     */
+
+public class PromoYouthSavingsAccountTests {
     @Test
     public void test()
     {

@@ -5,20 +5,8 @@ import ch.schule.Booking;
 import ch.schule.SavingsAccount;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
-
-
 import static ch.schule.bank.junit5.TestUtil.capture;
 import static org.junit.jupiter.api.Assertions.*;
-
-
-/**
- * Tests für die Klasse Account.
- *
- * @author elifbcan
- * @version 2.0
- */
-
 
 public class AccountTests {
 
@@ -29,9 +17,6 @@ public class AccountTests {
         acc = new SavingsAccount("S-1");
     }
 
-    /**
-     * Tested die Initialisierung eines Kontos.
-     */
     @Test
     public void testInit() {
         assertNotNull(acc);
@@ -43,9 +28,6 @@ public class AccountTests {
         assertTrue(acc.canTransact(0));
     }
 
-    /**
-     * Testet das Einzahlen auf ein Konto.
-     */
     @Test
     public void testDeposit() {
         assertTrue(acc.deposit(1, 1029));
@@ -64,9 +46,6 @@ public class AccountTests {
         assertFalse(acc.deposit(0, 15));
     }
 
-    /**
-     * Testet das Abheben von einem Konto.
-     */
     @Test
     public void testWithdraw() {
         acc.deposit(1, 1040);
@@ -91,9 +70,6 @@ public class AccountTests {
 
     }
 
-    /**
-     * Tests the reference from SavingsAccount
-     */
     @Test
     public void testReferences() {
         Booking booking = new Booking(1, 100);
@@ -102,9 +78,6 @@ public class AccountTests {
         assertSame(booking, acc.getBooking());
     }
 
-    /**
-     * teste the canTransact Flag
-     */
     @Test
     public void testCanTransact() {
         assertTrue(acc.canTransact(5));
@@ -122,9 +95,6 @@ public class AccountTests {
         assertFalse(acc.deposit(-12, 100));
     }
 
-    /**
-     * Experimente mit print().
-     */
     @Test
     public void testPrint() {
         acc.deposit(0, 100000);
@@ -138,9 +108,6 @@ public class AccountTests {
         assertTrue(out.contains("02.01.1970"));
     }
 
-    /**
-     * Experimente mit print(year,month).
-     */
     @Test
     public void testMonthlyPrint() {
         acc.deposit(5, 100000);

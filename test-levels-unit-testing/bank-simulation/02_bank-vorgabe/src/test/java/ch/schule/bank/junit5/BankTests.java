@@ -1,6 +1,5 @@
 package ch.schule.bank.junit5;
 
-import ch.schule.Account;
 import ch.schule.Bank;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -10,12 +9,7 @@ import static ch.schule.bank.junit5.TestUtil.capture;
 import static org.junit.jupiter.api.Assertions.*;
 
 
-/**
- * Tests für die Klasse 'Bank'.
- *
- * @author elifbcan
- * @version 2.0
- */
+
 public class BankTests {
 
     private Bank bank;
@@ -25,9 +19,6 @@ public class BankTests {
         bank = new Bank();
     }
 
-    /**
-     * Tests to create new Accounts
-     */
     @Test
     public void testCreate() {
         assertNotNull(bank);
@@ -41,9 +32,6 @@ public class BankTests {
         assertNull(bank.createSalaryAccount(1000));
     }
 
-    /**
-     * Testet das Einzahlen auf ein Konto.
-     */
     @Test
     public void testDeposit() {
         String id = bank.createSavingsAccount();
@@ -56,9 +44,6 @@ public class BankTests {
 
     }
 
-    /**
-     * Testet das Abheben von einem Konto.
-     */
     @Test
     public void testWithdraw() {
         String id = bank.createSavingsAccount();
@@ -73,9 +58,6 @@ public class BankTests {
         assertFalse(bank.withdraw("X-9", 3, 10));
     }
 
-    /**
-     * Experimente mit print().
-     */
     @Test
     public void testPrint() {
         String id = bank.createSavingsAccount();
@@ -88,9 +70,6 @@ public class BankTests {
         assertEquals("", capture(() -> bank.print("X-9")));
     }
 
-    /**
-     * Experimente mit print(year, month).
-     */
     @Test
     public void testMonthlyPrint() {
         String id = bank.createSavingsAccount();
@@ -103,9 +82,6 @@ public class BankTests {
         assertTrue(out.contains("Monat: 1.1970"));
     }
 
-    /**
-     * Testet den Gesamtkontostand der Bank.
-     */
     @Test
     public void testBalance() {
         assertEquals(0, bank.getBalance());
@@ -127,9 +103,6 @@ public class BankTests {
         }
     }
 
-    /**
-     * Tested die Ausgabe der "top 5" konten.
-     */
     @Test
     public void testTop5() {
         createSixAccounts();
@@ -141,9 +114,6 @@ public class BankTests {
         assertFalse(out.contains("S-1000: 100"));
     }
 
-    /**
-     * Tested die Ausgabe der "top 5" konten.
-     */
     @Test
     public void testBottom5() {
         createSixAccounts();

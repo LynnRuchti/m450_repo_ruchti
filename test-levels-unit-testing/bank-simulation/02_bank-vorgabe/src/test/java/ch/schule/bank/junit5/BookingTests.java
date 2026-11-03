@@ -9,17 +9,9 @@ import java.io.PrintStream;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-/**
- * Tests für die Klasse Booking.
- *
- * @author elifbcan
- * @version 2.0
- */
-public class BookingTests
-{
-    /**
-     * Tests für die Erzeugung von Buchungen.
-     */
+
+public class BookingTests {
+
     @Test
     public void testInitialization()
     {
@@ -30,9 +22,6 @@ public class BookingTests
         assertEquals(1000, booking.getAmount());
     }
 
-    /**
-     * Experimente mit print().
-     */
     @Test
     public void testPrint()
     {

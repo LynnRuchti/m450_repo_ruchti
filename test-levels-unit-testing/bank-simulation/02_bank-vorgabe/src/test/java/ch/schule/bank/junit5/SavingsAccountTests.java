@@ -5,14 +5,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-/**
- * Tests für die Klasse SavingsAccount.
- *
- * @author elifbcan
- * @version 2.0
- */
-public class SavingsAccountTests
-{
+public class SavingsAccountTests{
     @Test
     public void test()
     {
